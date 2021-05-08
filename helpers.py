@@ -4,12 +4,13 @@ import html
 import os
 import plotly
 import socket
+import config
 from twython import Twython
 from twython import TwythonAuthError, TwythonError, TwythonRateLimitError
 
 # twitter aplication keys
 os.environ['API_KEY'] = 'iBnbpKXoe6QqgEtddULWZrtfR'
-os.environ['API_Secret'] = 'OUtn0OdYwzo6piGD9hv4jYPhaoWrIuqPXZGp4KSsI4vZgO18vz'
+os.environ['API_SECRET'] = 'OUtn0OdYwzo6piGD9hv4jYPhaoWrIuqPXZGp4KSsI4vZgO18vz'
 
 
 def chart(positive, negative):

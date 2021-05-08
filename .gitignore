@@ -1,0 +1,9 @@
+git/
+__pycache__/
+config_set.py
+flask-aws/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
