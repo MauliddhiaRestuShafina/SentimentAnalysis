@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block subtext %}
+@{{ screen_name }}
+{% endblock %}
+
+{% block body %}
+
+{{ chart | safe }}
+<a href="/"><button class="btn btn-light btn-outline-success" id="sendMessageButton">&#8592; Back to Home</button></a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Date</th>
+      <th scope="col">Tweet</th>
+      <th scope="col">Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for tweet in tweets %}
+    <tr>
+      <th scope="row">{{ loop.index }}</th>
+      <td>{{ tweet.time | time }}</td>
+      <td>{{ tweet.tweet }}</td>
+      <td bgcolor="{{ 'red' if tweet.score < 0}}{{ 'green' if tweet.score > 0 }}">{{ tweet.score | number}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
