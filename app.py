@@ -4,22 +4,22 @@ from flask import Flask, redirect, render_template, request, url_for
 import helpers
 from analyzer import Analyzer
 
-application = Flask(__name__)
+app = Flask(__name__)
 
-@application.template_filter()
+@app.template_filter()
 def number(value):
     return "{:.4f}".format(value)
 
-@application.template_filter()
+@app.template_filter()
 def time(value):
     value = value[-4:] + ' ' + value[:19]
     return value
 
-@application.route("/")
+@app.route("/")
 def index():
     return render_template("index.html")
 
-@application.route("/search")
+@app.route("/search")
 def search():
 
     # validate screen_name
@@ -61,8 +61,8 @@ def search():
 
 
 # run the app.
-if __name__ == "__main__":
+#if __name__ == "__main__":
     # Setting debug to True enables debug output. This line should be
     # removed before deploying a production app.
-    #application.debug = True
-    application.run(host='0.0.0.0')
+    #app.debug = True
+    #app.run()
